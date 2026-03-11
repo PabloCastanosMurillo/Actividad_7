@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('courses', function (Blueprint $table) {
+        Schema::create('courses', function (Blueprint $table) {        
             $table->id();
-            $table->string('title');
-            $table->string('cover_image')->nullable();
-            $table->text('content');
-            $table->text('didactic_material')->nullable();
-            $table->foreignId('robotics_kit_id')->constrained();
+            $table->string('name');
+            $table->text('description');
+            $table->integer('duration');
+            $table->string('level');
             $table->timestamps();
         });
     }
